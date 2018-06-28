@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Label from '../Label';
+import Label from '../Label/Label';
 import { data } from '../../data/data';
 
 import './form.scss';

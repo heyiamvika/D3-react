@@ -4,15 +4,13 @@ import ReactDOM from 'react-dom';
 import './src/styles/main.scss';
 
 import Form from './src/components/Form/Form';
-import Chart from './src/components/Chart/Chart';
+import Graph from './src/components/Graph/Graph';
 
 const Layout = (data) => {
   return (
-    <div className="Chart">
-      <div className="container">
-        <Form />
-        <Chart />
-      </div>
+    <div className="container">
+      <Form />
+      <Graph />
     </div>
   )
 }
