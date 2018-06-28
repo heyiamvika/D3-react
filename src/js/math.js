@@ -1,3 +1,5 @@
+import { data } from '../data/data';
+
 export const math = () => {
     // const out = () => {
     //     let args = Array.prototype.slice.call(arguments, 0);
@@ -89,5 +91,15 @@ export const math = () => {
 
     // out("P_total", totalPower)
 
-    return { aerodynamicPower, rollingResistancePower, wheelBearingFrictionPower, potentialEnergyPower, kineticEnergyPower, chainEfficiencyFactor, totalPower };
+    const finalData = [
+        { "name": "aerodynamicPower", "value": aerodynamicPower },
+        { "name": 'rollingResistancePower', "value": rollingResistancePower },
+        { "name": "wheelBearingFrictionPower", "value": wheelBearingFrictionPower },
+        { "name": "potentialEnergyPower", "value": potentialEnergyPower },
+        { "name": "kineticEnergyPower", "value": kineticEnergyPower },
+        { "name": "chainEfficiencyFactor", "value": chainEfficiencyFactor },
+        { "name": "totalPower", "value": totalPower }
+    ];
+
+    return finalData;
 }

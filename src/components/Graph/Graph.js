@@ -3,7 +3,7 @@ import { PieChart, Pie, Legend, Tooltip } from 'recharts';
 
 import './c-graph.scss';
 
-import { data } from '../../data/data';
+import { math } from '../../js/math';
 
 class Graph extends React.Component {
     constructor(props) {
@@ -11,17 +11,21 @@ class Graph extends React.Component {
     }
 
     render() {
+        const inputData = math();
+
         return (
-            <PieChart width={300} height={300}>
-                <Pie
-                    dataKey="value"
-                    data={data}
-                    cx={140}
-                    cy={140}
-                    innerRadius={60}
-                    outerRadius={120}
-                    fill="#82ca9d" />
-            </PieChart>
+            <div className="c-graph">
+                <PieChart width={300} height={300}>
+                    <Pie
+                        dataKey="value"
+                        data={inputData}
+                        cx={140}
+                        cy={140}
+                        innerRadius={60}
+                        outerRadius={120}
+                        fill="#82ca9d" />
+                </PieChart>
+            </div>
         )
     }
 }
