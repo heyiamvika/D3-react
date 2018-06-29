@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 import './src/styles/main.scss';
 
-import Form from './src/components/Form/Form';
 import Graph from './src/components/Graph/Graph';
+import Form from './src/components/Form/Form';
 
 const Layout = () => {
   return (

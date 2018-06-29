@@ -1,4 +1,4 @@
-export const data = [
+export const inputs = [
     { "name": 'airDensity', "defaultValue": 1.0, "minValue": 0.0, "maxValue": 2.0 },
     { "name": 'frictionFactor', "defaultValue": 1.0, "minValue": 0.0, "maxValue": 2.0 },
     { "name": 'dragCoefficient', "defaultValue": 1.0, "minValue": 0.0, "maxValue": 2.0 },
