@@ -6,7 +6,7 @@ import './src/styles/main.scss';
 import Form from './src/components/Form/Form';
 import Graph from './src/components/Graph/Graph';
 
-const Layout = (data) => {
+const Layout = () => {
   return (
     <div className="container">
       <Form />

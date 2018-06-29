@@ -51,45 +51,30 @@ export const math = () => {
     // Air velocity (V_air)
     let tangentWindVelocity = windVelocity * Math.cos(toRadians(rideDirection) - toRadians(windDirection)) // m/s
     let airVelocity = groundVelocity + tangentWindVelocity
-    // out("V_air:", airVelocity)
 
     // Yaw angle
     let normalWindVelocity = windVelocity * Math.sin(toRadians(rideDirection) - toRadians(windDirection)) // m/s
     let yawAngle = toDegrees(Math.atan((normalWindVelocity / airVelocity)))
 
-    //out("Yaw angle:", yawAngle)
-
     // Aerodynamic power (P_ad)
     let cda = ((dragValues[1].dragArea - dragValues[0].dragArea) / (dragValues[1].yawAngle - dragValues[0].yawAngle)) * (yawAngle - dragValues[0].yawAngle) + dragValues[1].dragArea
     let aerodynamicPower = Math.pow(airVelocity, 2) * groundVelocity * airDensity * 0.5 * (cda + wheelAerodynamicFactor)
 
-    // out("P_ad:", aerodynamicPower)
-
     // Rolling resistance power (P_rr)
     let rollingResistancePower = groundVelocity * Math.cos(Math.atan(grade)) * rollingResistanceCoefficient * (bikeMass + riderMass) * gravityFactor
-
-    // out("P_rr:", rollingResistancePower)
 
     // Wheel bearing friction power (P_bfl)
     let wheelBearingFrictionPower = groundVelocity * (91.0 + 8.7 * groundVelocity) * Math.pow(10, -3)
 
-    //out("P_bfl", wheelBearingFrictionPower)
-
     //Power related to changes in potential energy (P_pe)
     let potentialEnergyPower = groundVelocity * (bikeMass + riderMass) * gravityFactor * Math.sin(Math.atan(grade))
-
-    //out("P_pe", potentialEnergyPower)
 
     //Power related tochanges in kineticenergy (P_ke)
     let kineticEnergyPower = 0.5 * (bikeMass + riderMass + momentOfInertiaOfWheels / Math.pow(outerTireRadius, 2)) * (Math.pow(finalVelocity, 2) - Math.pow(initialVelocity, 2)) / timeToCoverDistance
 
-    //out("P_ke", kineticEnergyPower)
-
     // Total power (P_total)
 
     let totalPower = (aerodynamicPower + rollingResistancePower + wheelBearingFrictionPower + potentialEnergyPower + kineticEnergyPower) * chainEfficiencyFactor;
-
-    // out("P_total", totalPower)
 
     const finalData = [
         { "name": "aerodynamicPower", "value": aerodynamicPower },

@@ -3,7 +3,7 @@ import React from 'react';
 import Label from '../Label/Label';
 import { data } from '../../data/data';
 
-import './form.scss';
+import './c-form.scss';
 
 class Form extends React.Component {
     constructor(props) {
