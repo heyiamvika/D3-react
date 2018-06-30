@@ -5,7 +5,7 @@ class Label extends React.Component {
         super(props);
 
         this.state = {
-            value: '1'
+            value: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -13,10 +13,11 @@ class Label extends React.Component {
 
     handleChange(event) {
         this.setState({ value: event.target.value });
-        this.props.onChange();
     }
 
     render() {
+        this.props.getValueChange(this.state.value);
+
         return (
             <label>
                 <span>{this.props.content.name}</span>

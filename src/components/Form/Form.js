@@ -9,22 +9,30 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+        }
+
         this.handleChange = this.handleChange.bind(this);
+        this.getValueChange = this.getValueChange.bind(this);
     }
 
     handleChange() {
-        console.log('change');
+        console.log(this.state)
+    }
+
+    getValueChange(value) {
+        this.setState({ value })
     }
 
     render() {
         const labelsArray = [];
 
         const label = inputs.map(element => {
-            labelsArray.push(<Label content={element} onChange={this.handleChange} />);
+            labelsArray.push(<Label content={element} getValueChange={this.getValueChange} />);
         });
 
         return (
-            <form className="c-form" onChange={this.handleChange()}>
+            <form className="c-form" onChange={this.handleChange}>
                 {labelsArray}
             </form>
         )

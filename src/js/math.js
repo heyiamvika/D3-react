@@ -1,11 +1,4 @@
-import { data } from '../data/inputs';
-
 export const math = () => {
-    // const out = () => {
-    //     let args = Array.prototype.slice.call(arguments, 0);
-    //     document.getElementById('output').innerHTML += args.join(" ") + "\n";
-    // }
-
     const toDegrees = (angle) => {
         return angle * (180 / Math.PI);
     }
@@ -22,14 +15,6 @@ export const math = () => {
     let windDirection = 310.0 // -
     let windVelocity = 2.94 // m/s
     let rollingResistanceCoefficient = 0.0032
-
-    // let airDensity = 1.2234 // kg/m^3
-    // let frictionFactor = 0.004 // -
-    // let dragCoefficient = 0.7 // -
-    // let gravityFactor = 9.81 // m/s^2
-    // let windDirection = 310.0 // -
-    // let windVelocity = 2.94 // m/s
-    // let rollingResistanceCoefficient = 0.0032
 
     // Bike and rider
     let bikeMass = 10 // kg
@@ -94,6 +79,5 @@ export const math = () => {
         { "name": "totalPower", "value": totalPower }
     ];
 
-    console.log(finalData);
     return finalData;
 }
