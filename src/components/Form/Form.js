@@ -26,8 +26,14 @@ class Form extends React.Component {
 
     getValueChange(name, value) {
         if (name, value) {
-            // this.vales.forEach(element => console.log(element));
-            this.values.push({ name: name, value: value })
+            this.values.map(element => {
+                if (name === element.name) {
+                    element.name = name;
+                    element.value = value;
+                } else {
+                    this.values.push({ name: name, value: value })
+                }
+            });
         }
     }
 
