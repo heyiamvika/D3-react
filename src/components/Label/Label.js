@@ -7,13 +7,7 @@ class Label extends React.Component {
         this.state = {
 
         }
-
-        // this.handleChange = this.handleChange.bind(this);
     }
-
-    // handleChange(e) {
-    //     this.setState({})
-    // }
 
     render() {
         return (
@@ -25,7 +19,7 @@ class Label extends React.Component {
                     min={this.props.content.minValue}
                     max={this.props.content.maxValue}
                     value={this.state.value}
-                    onChange={(e) => this.props.getValueChange({ name: this.props.content.name, value: e.target.value })}
+                    onChange={(e) => this.props.getValueChange(this.props.content.name, e.target.value)}
                 />
                 <span>{this.props.content.maxValue}</span>
             </label>

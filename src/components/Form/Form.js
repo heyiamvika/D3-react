@@ -10,9 +10,6 @@ class Form extends React.Component {
         super(props);
 
         this.state = {
-            values: {
-
-            }
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -24,8 +21,7 @@ class Form extends React.Component {
     }
 
     getValueChange(name, value) {
-        console.log(name, value)
-        // this.setState({ [name]: value });
+        this.setState({ name: name, value: value });
     }
 
     render() {
