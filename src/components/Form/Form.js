@@ -12,16 +12,18 @@ class Form extends React.Component {
         this.state = {
         }
 
-        this.handleChange = this.handleChange.bind(this);
         this.getValueChange = this.getValueChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange() {
+        // The mistake was the following:
         console.log(this.state);
     }
 
     getValueChange(name, value) {
-        this.setState({ name: name, value: value });
+        console.log(value);
+        this.state[name] = value;
     }
 
     render() {
