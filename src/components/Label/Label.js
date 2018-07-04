@@ -5,24 +5,28 @@ class Label extends React.Component {
         super(props);
 
         this.state = {
-            value: ''
+
         }
 
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value });
+        this.setState({ name: this.props.content.name, value: event.target.value });
     }
 
     render() {
-        this.props.getValueChange(this.state.value);
-
         return (
-            <label>
+            <label onChange={this.props.onChange(this.state.name, this.state.value)}>
                 <span>{this.props.content.name}</span>
                 <span>{this.props.content.minValue}</span>
-                <input type="range" min={this.props.content.minValue} max={this.props.content.maxValue} value={this.state.value} onChange={this.handleChange} />
+                <input
+                    type="range"
+                    min={this.props.content.minValue}
+                    max={this.props.content.maxValue}
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                />
                 <span>{this.props.content.maxValue}</span>
             </label>
         )

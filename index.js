@@ -9,8 +9,8 @@ import Form from './src/components/Form/Form';
 const Layout = () => {
   return (
     <div className="container">
-      {/* <Form />
-      <Graph /> */}
+      <Form />
+      <Graph />
     </div>
   )
 }
