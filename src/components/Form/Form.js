@@ -5,6 +5,9 @@ import { inputs } from '../../data/inputs';
 
 import './c-form.scss';
 
+const inputData = this.state;
+console.log(inputData);
+
 class Form extends React.Component {
     constructor(props) {
         super(props);
@@ -22,7 +25,6 @@ class Form extends React.Component {
     }
 
     getValueChange(name, value) {
-        console.log(value);
         this.state[name] = value;
     }
 
