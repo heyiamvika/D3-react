@@ -10,37 +10,28 @@ class Form extends React.Component {
         super(props);
 
         this.state = {
-            values: {}
-        }
+            values: {
 
-        this.values = [];
+            }
+        }
 
         this.handleChange = this.handleChange.bind(this);
         this.getValueChange = this.getValueChange.bind(this);
     }
 
     handleChange() {
-        this.setState({ values: this.values });
         console.log(this.state);
     }
 
     getValueChange(name, value) {
-        if (name, value) {
-            this.values.map(element => {
-                if (name === element.name) {
-                    element.name = name;
-                    element.value = value;
-                } else {
-                    this.values.push({ name: name, value: value })
-                }
-            });
-        }
+        console.log(name, value)
+        // this.setState({ [name]: value });
     }
 
     render() {
         return (
             <form className="c-form" onChange={this.handleChange}>
-                {inputs.map(element => <Label content={element} onChange={this.getValueChange} key={element.name} />)}
+                {inputs.map(element => <Label content={element} getValueChange={this.getValueChange} key={element.name} />)}
             </form>
         )
     }
