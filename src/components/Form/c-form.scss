@@ -1,27 +1,20 @@
 .c-form {
-    width: 300px;
-    min-height: 300px;
+    min-width: 300px;
+    max-height: 800px;
     display: flex;
     flex-direction: column;
-    padding: 50px;
+    flex-wrap: wrap;
+    padding: 50px 0px;
     margin: auto;
 
     label {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
         align-items: center;
-        flex-wrap: wrap;
         margin-bottom: 20px;
 
         .input-heading {
             margin-bottom: 10px;
-        }
-
-        .input-wrapper {
-            width: 200px;
-            display: flex;
-            justify-content: space-between;
         }
     }
 }

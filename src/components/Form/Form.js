@@ -5,14 +5,12 @@ import { inputs } from '../../data/inputs';
 
 import './c-form.scss';
 
-const inputData = this.state;
-console.log(inputData);
-
 class Form extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            values: {}
         }
 
         this.getValueChange = this.getValueChange.bind(this);
@@ -20,12 +18,12 @@ class Form extends React.Component {
     }
 
     handleChange() {
-        // The mistake was the following:
-        console.log(this.state);
+        const values = this.state.values;
+        console.log(values);
     }
 
     getValueChange(name, value) {
-        this.state[name] = value;
+        this.state.values[name] = value;
     }
 
     render() {
